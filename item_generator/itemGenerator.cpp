@@ -2,6 +2,14 @@
 unsigned itemGenerator::items_generated = 0;
 std::unordered_set<char> itemGenerator::consonants = {};
 std::unordered_set<std::string> itemGenerator::adjectives = {};
+
+template <typename T>
+void print_iterator(T& iter) {
+	for (const auto& elem : iter) {
+		std::cout << elem << std::endl;
+	}
+}
+
 std::string itemGenerator::generate_item()
 {
 	itemGenerator::items_generated++;
@@ -16,6 +24,7 @@ bool itemGenerator::is_unique_word(const std::unordered_set<std::string>& dictio
 std::unordered_set<std::string> itemGenerator::Add_er_est(const std::string & word)
 {
 	std::unordered_set<std::string> ret;
+	ret.insert(word);
 	if (word.size() > 2) // Make sure we can do the index backwards cvc
 	{
 		char lastLetter = word[word.size() - 1];
@@ -27,13 +36,21 @@ std::unordered_set<std::string> itemGenerator::Add_er_est(const std::string & wo
 		{
 			ret.insert(word + lastLetter + "er");
 			ret.insert(word + lastLetter + "est");
-			ret.insert(word);
-			/*std::cout << word << std::endl;
-			std::cout << word + lastLetter + "er" << std::endl;
-			std::cout << word + lastLetter + "est" << std::endl;*/
-			return ret;
+		}
+		else if (lastLetter == 'y' && consonants.find(secondToLastLetter) != consonants.end()) // c + y
+		{
+			std::string temp = word.substr(0, word.size() - 1);
+			temp = temp + 'i';
+			ret.insert(temp + "er");
+			ret.insert(temp + "est");
+		}
+		else if (lastLetter == 'e' && consonants.find(secondToLastLetter) != consonants.end()) //c + e
+		{
+			ret.insert(word + "r");
+			ret.insert(word + "st");
 		}
 	}
+	print_iterator(ret);
 	return ret;
 }
 
@@ -62,7 +79,6 @@ void itemGenerator::load_adjectives() {
 	std::string word;
 	std::unordered_set<std::string> validWords;
 	while (getline(inFile, line)) {
-
 		if (line.find("1") != -1) {
 			word = line.substr(0, line.find(" "));
 			validWords = itemGenerator::Add_er_est(word);
