@@ -2,6 +2,16 @@
 unsigned itemGenerator::items_generated = 0;
 std::unordered_set<char> itemGenerator::consonants = {};
 std::unordered_set<std::string> itemGenerator::adjectives = {};
+std::unordered_set<std::string> itemGenerator::weapons = {};
+std::unordered_set<std::string> itemGenerator::rings = {};
+std::unordered_set<std::string> itemGenerator::helms = {};
+std::unordered_set<std::string> itemGenerator::necklaces = {};
+std::unordered_set<std::string> itemGenerator::gloves = {};
+std::unordered_set<std::string> itemGenerator::boots = {};
+std::unordered_set<std::string> itemGenerator::leg_armor = {};
+std::unordered_set<std::string> itemGenerator::chest_armor = {};
+std::unordered_set<std::string> itemGenerator::spells = {};
+#define LOADSET(name) load_set(#name, (name))
 
 template <typename T>
 void print_iterator(T& iter) {
@@ -12,7 +22,7 @@ void print_iterator(T& iter) {
 
 std::string itemGenerator::generate_item()
 {
-	itemGenerator::items_generated++;
+	items_generated++;
 	return std::string("eek" + std::to_string(itemGenerator::items_generated));
 }
 
@@ -50,14 +60,13 @@ std::unordered_set<std::string> itemGenerator::Add_er_est(const std::string & wo
 			ret.insert(word + "st");
 		}
 	}
-	print_iterator(ret);
 	return ret;
 }
 
 void itemGenerator::setup_datastructures()
 {
-	itemGenerator::setup_consonants();
-	itemGenerator::load_adjectives();
+	setup_consonants();
+	LOADSET(adjectives);
 }
 
 void itemGenerator::setup_consonants() {
@@ -66,7 +75,7 @@ void itemGenerator::setup_consonants() {
 		consonants.insert(consonant_to_load[i]);
 }
 
-void itemGenerator::load_adjectives() {
+void itemGenerator::load_set(char * name, std::unordered_set<std::string> & set_to_load) {
 	std::ifstream inFile;
 	std::unordered_set<std::string> words;
 	std::string line;
@@ -85,8 +94,9 @@ void itemGenerator::load_adjectives() {
 
 		}
 		for (const auto& elem : validWords) {
-			adjectives.insert(elem);
+			set_to_load.insert(elem);
 		}
+		validWords.clear();
 	}
 	inFile.close();
 }

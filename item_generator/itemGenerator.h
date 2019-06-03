@@ -19,7 +19,7 @@ private:
 	static unsigned items_generated;
 	static std::unordered_set<char> consonants;
 	static void setup_consonants();
-	static void load_adjectives();
+	static void load_set(char * name, std::unordered_set<std::string> &);
 	static std::unordered_set<std::string> adjectives;
 	static std::unordered_set<std::string> weapons;
 	static std::unordered_set<std::string> rings;
