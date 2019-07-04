@@ -1,0 +1,55 @@
+hat
+cap
+baseball cap
+sun hat
+stocking cap
+military helmet
+bike helmet
+motorcycle helmet
+goggles
+glasses
+sunglasses
+hardhat
+visor
+beret
+fedora
+ascot cap
+headband
+bandanna
+bobby pin
+barrette
+hair tie
+scrunchie
+hair binder
+beanie
+bonnet
+veil
+bow
+ponytail holder
+sweatband
+tiara
+crown
+bun net
+feathers
+top hat
+bowler
+fez
+burka
+hijab
+party hat
+panama hat
+mortarboard
+porkpie hat
+extensions
+wig
+toupee
+hood
+fishing hat
+batting helmet
+cowboy hat
+deerstalker
+knit cap
+scull cap
+kippah
+nightcap
+straw hat

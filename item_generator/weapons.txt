@@ -1,0 +1,55 @@
+mace
+pole
+spear
+staff
+sword
+shortsword
+longsword
+claymore
+falchion
+broad sword
+dagger
+stilleto
+rondel
+club
+great club
+morningstar
+holy water sprinkler
+flail
+war hammer
+pickaxe
+quarterstaff
+winged spear
+lance
+pike
+glaive
+halberd
+axe
+maul
+bottle
+back-scratcher
+javelin
+shortbow
+longbow
+crossbow
+gun
+pistol
+machine gun
+rifle
+sniper rifle
+cannon
+rapier
+katana
+knife
+estoc
+war hammer
+scyth
+sling
+kunai
+chakram
+shuriken
+musket
+flamethrower
+book
+shield
+kiteshield

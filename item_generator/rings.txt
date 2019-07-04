@@ -1,0 +1,6 @@
+circlet
+ring
+band
+circle
+hole
+donut

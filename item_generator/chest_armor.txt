@@ -1,0 +1,10 @@
+breastplate
+chainmail
+chestguard
+t-shirt
+sweater
+robe
+tank-top
+bra
+towel
+sash

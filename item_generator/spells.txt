@@ -1,0 +1,4 @@
+firemove
+icemove
+deathmove
+killmove

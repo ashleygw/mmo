@@ -1,0 +1,13 @@
+scarf
+necklace
+choker
+lanyard
+collar
+tie
+bandanna
+cravat
+garland
+mantilla
+shawl
+stole
+wrap

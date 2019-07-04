@@ -1,0 +1,11 @@
+trousers
+skirt
+pants
+shorts
+pantaloons
+knee-socks
+stockings
+leggings
+greaves
+tights
+chaps
